@@ -1,13 +1,10 @@
 package net.bytesoup.playground.leetcode.addtwonumbers;
 
-import java.lang.reflect.Executable;
-import lombok.extern.slf4j.Slf4j;
+import static net.bytesoup.playground.leetcode.common.ListNodes.getVal;
 
-/**
- * Definition for singly-linked list. public class ListNode { int val; ListNode next; ListNode() {}
- * ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val;
- * this.next = next; } }
- */
+import lombok.extern.slf4j.Slf4j;
+import net.bytesoup.playground.leetcode.common.ListNode;
+
 @Slf4j
 public class AddTwoNumbers {
 
@@ -35,9 +32,5 @@ public class AddTwoNumbers {
       currentResultNode.setNext(new ListNode(carry, null));
     }
     return rootNode.getNext();
-  }
-
-  private int getVal(ListNode node) {
-    return node != null ? node.getVal() : 0;
   }
 }

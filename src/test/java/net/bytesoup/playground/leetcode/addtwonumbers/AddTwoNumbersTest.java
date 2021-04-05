@@ -2,6 +2,7 @@ package net.bytesoup.playground.leetcode.addtwonumbers;
 
 import com.google.common.truth.Truth;
 import lombok.extern.slf4j.Slf4j;
+import net.bytesoup.playground.leetcode.common.ListNode;
 import org.junit.Test;
 
 @Slf4j
