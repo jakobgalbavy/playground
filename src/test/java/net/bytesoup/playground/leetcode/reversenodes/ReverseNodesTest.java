@@ -1,8 +1,9 @@
 package net.bytesoup.playground.leetcode.reversenodes;
 
+import static net.bytesoup.playground.leetcode.common.ListNodes.getLinkedList;
+
 import com.google.common.truth.Truth;
 import lombok.extern.slf4j.Slf4j;
-import net.bytesoup.playground.leetcode.common.ListNode;
 import org.junit.Test;
 
 @Slf4j
@@ -54,20 +55,5 @@ public class ReverseNodesTest {
   public void simple_swapOne() {
     var reversedValue = ReverseNodes.reverseKGroup(getLinkedList(1, 2), 1);
     Truth.assertThat(reversedValue).isEqualTo(getLinkedList(1, 2));
-  }
-
-  private ListNode getLinkedList(int... list) {
-    var rootNode = new ListNode();
-    var currentNode = rootNode;
-
-    for (int number : list) {
-      currentNode.setNext(ListNode.builder()
-          .val(number)
-          .build());
-      currentNode = currentNode.getNext();
-    }
-
-    log.debug("Created Linkedlist {} from {}", rootNode, list);
-    return rootNode.getNext();
   }
 }
