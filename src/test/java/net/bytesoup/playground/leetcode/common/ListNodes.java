@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ListNodes {
 
+  private ListNodes() {
+  }
+
   public static ListNode getLinkedList(int... list) {
     var rootNode = new ListNode();
     var currentNode = rootNode;
@@ -28,5 +31,9 @@ public class ListNodes {
       Truth.assertThat(current.getVal()).isEqualTo(i);
       current = current.getNext();
     }
+  }
+
+  public static int getVal(ListNode node) {
+    return node != null ? node.getVal() : 0;
   }
 }
