@@ -1,7 +1,7 @@
 package net.bytesoup.playground.leetcode.wildcardmatching;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.AbstractMap;
+import java.util.stream.IntStream;
 
 public class WildcardMatcher {
 
@@ -12,32 +12,23 @@ public class WildcardMatcher {
     if (WILDCARD_ANY.equals(p)) {
       return true;
     }
-    Map<Integer, Integer> pointers = new HashMap<>();
-    for (Character c : s.toCharArray()) {
-      var string = String.valueOf(c);
-      for (var entry : pointers.entrySet()) {
-        if (isStringEqual(string, p.substring(entry.getValue(), entry.getValue() + 1))) {
-          entry.setValue(entry.getValue() + 1);
-          if (entry.getValue() >= p.length()) {
-            return true;
-          }
-        }
-      }
-      if (isStringEqual(string, p.substring(0, 1))) {
-        if (p.length() == 1) {
-          return true;
-        }
-        pointers.put(pointers.size(), 1);
-      }
-    }
-    return false;
+    IntStream.range(0, s.length()).mapToObj(i ->
+        new AbstractMap.SimpleEntry<>(
+            i, isStringEqual(s, p, i)
+
+        )
+
+    )
   }
 
-  private static boolean isStringEqual(String s1, String s2) {
-    return s2.isBlank() ||
-        s1.equals(s2) ||
-        (!s1.isBlank() &&
-            (WILDCARD_ANY.equals(s2) || WILDCARD_SINGLE.equals(s2)
+  private static boolean isStringEqual(String s, String p, int index) {
+    String sAtIndex = String.valueOf(s.charAt(index));
+    String pAtIndex = String.valueOf(p.charAt(index));
+
+    return p.isBlank() ||
+        s.equals(p) ||
+        (!s.isBlank() &&
+            (WILDCARD_ANY.equals(p) || WILDCARD_SINGLE.equals(p)
             ));
   }
 }
