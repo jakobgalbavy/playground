@@ -49,7 +49,7 @@ public class Race {
 
   @Data
   @Builder
-  private class Stint {
+  private static class Stint {
 
     private Tire tire;
     private int laps = -1;
