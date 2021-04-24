@@ -18,7 +18,8 @@ public class WildcardMatcher {
 
         )
 
-    )
+    );
+    return false;
   }
 
   private static boolean isStringEqual(String s, String p, int index) {
