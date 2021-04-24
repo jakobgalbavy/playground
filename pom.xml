@@ -41,10 +41,10 @@
   </dependencies>
   <artifactId>Playground</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <groupId>net.bytesoup</groupId>
 
   <properties>
-    <maven.compiler.source>13</maven.compiler.source>
-    <maven.compiler.target>13</maven.compiler.target>
+    <maven.compiler.source>15</maven.compiler.source>
+    <maven.compiler.target>15</maven.compiler.target>
   </properties>
-  <groupId>net.bytesoup</groupId>
 </project>
