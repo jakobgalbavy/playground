@@ -28,6 +28,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <artifactId>mockito-all</artifactId>
+      <groupId>org.mockito</groupId>
+      <scope>test</scope>
+      <version>1.10.19</version>
+    </dependency>
+    <dependency>
       <artifactId>guava</artifactId>
       <groupId>com.google.guava</groupId>
       <version>30.0-jre</version>
